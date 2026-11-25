@@ -24,3 +24,14 @@ export const getProductsByCateg=async (categId)=>{
     }
 
 }
+
+export const getProducts=async ()=>{
+    try {
+        const resp=await axios.get(baseUrl+`products`)
+        return resp.data
+    } catch (error) {
+        console.log(error);
+        
+    }
+
+}

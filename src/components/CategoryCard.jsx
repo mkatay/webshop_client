@@ -9,16 +9,16 @@ export const CategoryCard = ({ category }) => {
 
   return (
     <Link to={`/products/${category.id}`}>
-        <div className="card bg-base-100 image-full  shadow-sm">
+        <div className="card  h-64 image-full ">
         <figure>
-            <img className='w-full object-cover' src={category.thumbnail} alt={category.name} 
+            <img className='w-full h-full object-cover' src={category.thumbnail} alt={category.name} 
               onError={handleImageError}
         />
         </figure>
-        <div className="card-body">
-            <h2 className="card-title">{category.name}</h2>
+        <div className="card-body justify-end">
+            <h2 className="card-title text-fuchsia-400 uppercase text-3xl">{category.name}</h2>
             <div className="card-actions justify-end">
-                <button className="btn btn-primary">Termékek megtekintése →</button>
+                <button className="btn bg-fuchsia-100">Termékek megtekintése →</button>
             </div>
         </div>
         </div>

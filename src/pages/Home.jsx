@@ -11,7 +11,7 @@ export const Home = () => {
   }, [])
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,300px))]">
+    <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3   gap-4 bg-slate-200">
       {categories && categories.map(category => (
         <CategoryCard key={category.id} category={category} />
       ))}

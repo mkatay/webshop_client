@@ -1,16 +1,20 @@
 import { useParams } from 'react-router'
-import { getProductsByCateg } from '../utils'
+import { getProducts, getProductsByCateg } from '../utils'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 export const Products = () => {
   const { categoryId } = useParams()
   const [products, setProducts] = useState(null)
 
-  console.log(categoryId);
+  categoryId && console.log(categoryId);
   
 
     useEffect(() => {
-    getProductsByCateg(categoryId).then(setProducts)
+      if(categoryId)  getProductsByCateg(categoryId).then(setProducts)
+        else getProducts().then(setProducts)
     }, [])
+products && console.log(products);
 
   return (
     <div>
